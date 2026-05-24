@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narices de Campeones · Torneo Olfativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --brown: #2C1810;
+    --spice: #C4622D;
+    --gold: #D4A853;
+    --sage: #7A8C6E;
+    --light: #FAF7F2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 60% 40%, #e8d5b0 0%, var(--cream) 70%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,98,45,0.15);
+    top: -100px; right: -100px;
+    animation: pulse 6s ease-in-out infinite;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,168,83,0.2);
+    bottom: -50px; left: -80px;
+    animation: pulse 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--spice);
+    margin-bottom: 24px;
+    font-weight: 500;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--brown);
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-title em {
+    color: var(--spice);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: #7a6a5a;
+    max-width: 480px;
+    margin: 24px auto 0;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    animation: fadeUp 0.8s 0.3s ease both;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-meta-item { text-align: center; }
+
+  .hero-meta-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--spice);
+    display: block;
+  }
+
+  .hero-meta-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a8a7a;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--spice);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  p {
+    color: #5a4a3a;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--spice), var(--gold));
+    margin: 0 auto 80px;
+  }
+
+  /* OBJETIVO */
+  .objetivo-block {
+    background: var(--brown);
+    color: var(--cream);
+    padding: 56px 48px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .objetivo-block::after {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 220px;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    right: -20px;
+    top: -40px;
+    line-height: 1;
+  }
+
+  .objetivo-block .section-label { color: var(--gold); }
+  .objetivo-block h2 { color: var(--cream); }
+  .objetivo-block p { color: rgba(245,240,232,0.75); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+  .objetivo-block p:last-child { margin-bottom: 0; }
+
+  /* FORMATO */
+  .formato-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(44,24,16,0.1);
+    border: 1px solid rgba(44,24,16,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .formato-item {
+    background: var(--light);
+    padding: 32px 28px;
+    transition: background 0.3s;
+  }
+
+  .formato-item:hover { background: white; }
+  .formato-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+
+  .formato-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--spice);
+    display: block;
+    line-height: 1;
+  }
+
+  .formato-desc {
+    font-size: 13px;
+    color: #7a6a5a;
+    margin-top: 4px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+  }
+
+  /* ROLES */
+  .roles-note {
+    margin-top: 28px;
+    background: white;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: #4a3a2a;
+  }
+
+  .roles-note strong { color: var(--spice); }
+
+  /* MATERIALES */
+  .materiales-section {
+    background: var(--light);
+    padding: 80px 40px;
+    border-top: 1px solid rgba(44,24,16,0.08);
+    border-bottom: 1px solid rgba(44,24,16,0.08);
+  }
+
+  .materiales-inner { max-width: 860px; margin: 0 auto; }
+
+  .materiales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .material-card {
+    background: white;
+    border: 1px solid rgba(44,24,16,0.08);
+    border-radius: 4px;
+    padding: 24px 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .material-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(44,24,16,0.08);
+  }
+
+  .mat-icon { font-size: 22px; margin-bottom: 10px; display: block; }
+  .mat-name { font-size: 14px; font-weight: 500; color: var(--brown); }
+  .mat-detail { font-size: 12px; color: #9a8a7a; margin-top: 4px; margin-bottom: 0; }
+
+  /* AROMAS */
+  .aromas-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(44,24,16,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .aroma-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    background: white;
+    border-bottom: 1px solid rgba(44,24,16,0.06);
+    transition: background 0.2s;
+  }
+
+  .aroma-item:last-child { border-bottom: none; }
+  .aroma-item:hover { background: var(--light); }
+
+  .aroma-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    width: 32px;
+    flex-shrink: 0;
+  }
+
+  .aroma-icon { font-size: 20px; flex-shrink: 0; }
+  .aroma-name { font-size: 15px; font-weight: 500; color: var(--brown); flex: 1; }
+  .aroma-tip { font-size: 12px; color: #9a8a7a; font-style: italic; }
+
+  .aroma-last { background: #FFF5F0; }
+  .aroma-last .aroma-num { color: var(--spice); }
+
+  /* AROMAS TABLE */
+  .aromas-filter {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 32px 0 20px;
+  }
+
+  .filter-btn {
+    background: white;
+    border: 1px solid rgba(44,24,16,0.15);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    color: #7a6a5a;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: var(--spice); color: var(--spice); }
+  .filter-btn.active { background: var(--spice); border-color: var(--spice); color: white; }
+
+  .aromas-tabla {
+    border: 1px solid rgba(44,24,16,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .aromas-tabla-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2.5fr;
+    padding: 12px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    background: var(--brown);
+  }
+
+  .aromas-grupo-label {
+    background: var(--light);
+    padding: 8px 20px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #9a8a7a;
+    font-weight: 500;
+    border-top: 1px solid rgba(44,24,16,0.06);
+    border-bottom: 1px solid rgba(44,24,16,0.06);
+  }
+
+  .aroma-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2.5fr;
+    align-items: center;
+    padding: 14px 20px;
+    background: white;
+    border-bottom: 1px solid rgba(44,24,16,0.05);
+    transition: background 0.2s;
+  }
+
+  .aroma-row:last-child { border-bottom: none; }
+  .aroma-row:hover { background: #FFFAF5; }
+  .aroma-row.hidden { display: none; }
+
+  .ar-name { font-weight: 500; color: var(--brown); font-size: 14px; }
+
+  .ar-intensidad {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .ar-intensidad.alta { background: rgba(196,98,45,0.1); color: var(--spice); }
+  .ar-intensidad.media { background: rgba(212,168,83,0.12); color: #a07a30; }
+  .ar-intensidad.baja { background: rgba(122,140,110,0.12); color: var(--sage); }
+
+  .ar-acceso { font-size: 12px; color: #7a6a5a; }
+  .ar-acceso.facil { color: var(--sage); font-weight: 500; }
+  .ar-acceso.media { color: #a07a30; }
+
+  .ar-prep { font-size: 12px; color: #7a6a5a; line-height: 1.5; }
+
+  .aromas-nota {
+    margin-top: 20px;
+    background: white;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #5a4a3a;
+    line-height: 1.6;
+  }
+
+  .aromas-nota strong { color: var(--brown); }
+
+  @media (max-width: 700px) {
+    .aromas-tabla-header { display: none; }
+    .aroma-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
+  }
+
+  /* REGLAS GENERALES */
+  .reglas-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .regla-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 24px;
+    background: white;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    transition: border-color 0.3s;
+  }
+
+  .regla-item:hover { border-color: var(--spice); }
+
+  .regla-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgba(44,24,16,0.12);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .regla-text {
+    font-size: 14px;
+    color: #4a3a2a;
+    margin: 0;
+    padding-top: 4px;
+    line-height: 1.6;
+  }
+
+  /* RONDAS */
+  .rondas-section {
+    background: var(--brown);
+    padding: 80px 40px;
+  }
+
+  .rondas-inner { max-width: 860px; margin: 0 auto; }
+  .rondas-inner .section-label { color: var(--gold); }
+  .rondas-inner h2 { color: var(--cream); }
+
+  .ronda-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 40px;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .ronda-card:hover { background: rgba(255,255,255,0.08); }
+
+  .ronda-num-bg {
+    position: absolute;
+    top: -20px;
+    right: 32px;
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .ronda-badge {
+    display: inline-block;
+    background: var(--spice);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .ronda-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .ronda-meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .ronda-meta-item {
+    font-size: 12px;
+    color: rgba(245,240,232,0.5);
+    letter-spacing: 0.5px;
+  }
+
+  .ronda-meta-item span { color: var(--gold); font-weight: 500; }
+
+  .ronda-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ronda-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .ronda-step-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--spice);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .ronda-step-text {
+    font-size: 14px;
+    color: rgba(245,240,232,0.7);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .puntaje-box {
+    margin-top: 24px;
+    background: rgba(212,168,83,0.12);
+    border: 1px solid rgba(212,168,83,0.25);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--gold);
+    line-height: 1.7;
+  }
+
+  .puntaje-box strong { font-weight: 600; display: block; margin-bottom: 6px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* REGLAS RONDA 3 */
+  .r3-rules {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .r3-col {
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+
+  .r3-col.permitido { background: rgba(122,140,110,0.15); border: 1px solid rgba(122,140,110,0.25); }
+  .r3-col.prohibido { background: rgba(196,98,45,0.12); border: 1px solid rgba(196,98,45,0.2); }
+
+  .r3-col-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .r3-col.permitido .r3-col-label { color: #a8bc94; }
+  .r3-col.prohibido .r3-col-label { color: #e8a07a; }
+
+  .r3-rule-item {
+    font-size: 13px;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 6px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .r3-rule-item:last-child { margin-bottom: 0; }
+  .r3-rule-item .r3-icon { flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+
+  /* EJEMPLOS RONDA 3 */
+  .ejemplos-r3 {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .ejemplos-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .ejemplo-fila {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .ejemplo-fila:last-child { margin-bottom: 0; }
+
+  .ejemplo-aroma {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    width: 80px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  .ejemplo-desc {
+    font-size: 13px;
+    color: rgba(245,240,232,0.6);
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* TABLA PUNTOS */
+  .tabla-section {
+    padding: 80px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  .tabla th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--spice);
+    font-weight: 500;
+    border-bottom: 2px solid rgba(44,24,16,0.1);
+    background: var(--light);
+  }
+
+  .tabla td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(44,24,16,0.06);
+    color: #4a3a2a;
+  }
+
+  .tabla tr:last-child td { border-bottom: none; }
+  .tabla tr:hover td { background: var(--light); }
+
+  .tabla .total {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--spice);
+  }
+
+  .tabla .ganador td { background: #FFF8F0; }
+
+  /* DESEMPATE */
+  .desempate-block {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  .desempate-inner {
+    background: linear-gradient(135deg, var(--spice) 0%, #9a3a10 100%);
+    border-radius: 4px;
+    padding: 56px 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .desempate-inner::before {
+    content: '⚡';
+    position: absolute;
+    font-size: 180px;
+    opacity: 0.06;
+    right: -20px;
+    bottom: -40px;
+  }
+
+  .desempate-inner .section-label { color: rgba(255,255,255,0.6); }
+  .desempate-inner h2 { color: white; margin-bottom: 16px; }
+  .desempate-inner p { color: rgba(255,255,255,0.75); font-size: 15px; margin-bottom: 0; }
+
+  /* TIPS */
+  .tips-section {
+    background: var(--light);
+    padding: 80px 40px;
+    border-top: 1px solid rgba(44,24,16,0.08);
+  }
+
+  .tips-inner { max-width: 860px; margin: 0 auto; }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .tip-card {
+    background: white;
+    border-radius: 4px;
+    padding: 28px 24px;
+    border: 1px solid rgba(44,24,16,0.06);
+  }
+
+  .tip-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+  .tip-title { font-size: 14px; font-weight: 500; color: var(--brown); margin-bottom: 8px; }
+  .tip-body { font-size: 13px; color: #7a6a5a; line-height: 1.6; margin: 0; }
+
+  /* PREMIO */
+  .premio-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .premio-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .premio-item {
+    background: white;
+    border: 1px solid rgba(44,24,16,0.08);
+    border-radius: 4px;
+    padding: 28px 24px;
+    width: 160px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .premio-item:hover { transform: translateY(-4px); }
+  .premio-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+  .premio-text { font-size: 13px; color: #5a4a3a; line-height: 1.5; }
+
+  footer {
+    background: var(--brown);
+    color: rgba(245,240,232,0.4);
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  footer strong { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    section { padding: 60px 24px; }
+    .formato-grid { grid-template-columns: 1fr; }
+    .r3-rules { grid-template-columns: 1fr; }
+    .objetivo-block { padding: 40px 28px; }
+    .ronda-card { padding: 28px 24px; }
+    .desempate-inner { padding: 40px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Actividad universitaria · Sentido del olfato</p>
+  <h1 class="hero-title">Narices de<br><em>Campeones</em></h1>
+  <p class="hero-subtitle">Un torneo olfativo por equipos donde el olfato se pone a prueba en tres rondas progresivamente más desafiantes.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-num">4</span>
+      <span class="hero-meta-label">Equipos</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-num">3</span>
+      <span class="hero-meta-label">Rondas</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-num">25'</span>
+      <span class="hero-meta-label">Duración</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-num">16</span>
+      <span class="hero-meta-label">Pts. máximos</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OBJETIVO -->
+<section>
+  <div class="objetivo-block">
+    <p class="section-label">¿De qué trata?</p>
+    <h2>El objetivo</h2>
+    <p>Cuatro equipos compiten desarrollando su sentido del olfato a través de tres rondas distintas: identificar aromas, recordarlos y comunicarlos mediante actuación. Un integrante diferente del equipo participa en cada ronda, garantizando que todos jueguen.</p>
+    <p>El grupo organizador —al que le correspondió el sentido del olfato— actúa como moderador. No compite. Se encarga de preparar los materiales, controlar los tiempos y llevar el marcador visible para todos.</p>
+  </div>
+</section>
+
+<!-- FORMATO -->
+<section>
+  <p class="section-label">Cómo se organiza</p>
+  <h2>Formato del juego</h2>
+  <p>Antes de empezar, cada equipo elige internamente quién jugará cada ronda. Esa decisión es estratégica y definitiva.</p>
+  <div class="formato-grid">
+    <div class="formato-item">
+      <span class="formato-icon">🏁</span>
+      <span class="formato-num">4</span>
+      <p class="formato-desc">equipos competidores</p>
+    </div>
+    <div class="formato-item">
+      <span class="formato-icon">🔄</span>
+      <span class="formato-num">1</span>
+      <p class="formato-desc">integrante diferente por ronda</p>
+    </div>
+    <div class="formato-item">
+      <span class="formato-icon">⏱</span>
+      <span class="formato-num">25'</span>
+      <p class="formato-desc">duración total aproximada</p>
+    </div>
+    <div class="formato-item">
+      <span class="formato-icon">🏆</span>
+      <span class="formato-num">16</span>
+      <p class="formato-desc">puntos máximos por equipo</p>
+    </div>
+  </div>
+  <div class="roles-note">
+    El grupo que preparó la actividad es el <strong>moderador</strong>: no compite, prepara las bolsitas, controla el cronómetro y actualiza la tabla de puntos en la pizarra al final de cada ronda.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MATERIALES -->
+<div class="materiales-section">
+  <div class="materiales-inner">
+    <p class="section-label">Lo que necesitas</p>
+    <h2>Materiales</h2>
+    <p>Todo se consigue en cocina o supermercado. Los aromas son sólidos o frescos, así que van directo dentro de la bolsita sin necesidad de algodón ni gasa.</p>
+    <div class="materiales-grid">
+      <div class="material-card">
+        <span class="mat-icon">🛍</span>
+        <div class="mat-name">Bolsitas opacas</div>
+        <p class="mat-detail">7 bolsitas de tela tipo organza o papel de regalo. Cerradas con liga o cinta para que no salga el polvo.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">☕</span>
+        <div class="mat-name">Café molido</div>
+        <p class="mat-detail">Una cucharadita directamente dentro de la bolsita.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">🌿</span>
+        <div class="mat-name">Canela · Romero · Orégano</div>
+        <p class="mat-detail">Una pizca de cada uno, directo en su bolsita. Sin ningún otro soporte.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">🔴</span>
+        <div class="mat-name">Clavo de olor</div>
+        <p class="mat-detail">2 o 3 clavos enteros, ligeramente machacados para liberar mejor el aroma.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">🍋</span>
+        <div class="mat-name">Limón (ralladura)</div>
+        <p class="mat-detail">Ralladura fresca de medio limón. Preparar justo antes de la actividad, pierde fuerza rápido.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">🧄</span>
+        <div class="mat-name">Ajo molido</div>
+        <p class="mat-detail">Una pizca pequeña. Muy invasivo — siempre en la bolsita 7, nunca antes.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">👁</span>
+        <div class="mat-name">Vendas para ojos</div>
+        <p class="mat-detail">Una por participante activo por ronda. Pueden ser pañuelos o telas oscuras dobladas.</p>
+      </div>
+      <div class="material-card">
+        <span class="mat-icon">📋</span>
+        <div class="mat-name">Pizarra y cronómetro</div>
+        <p class="mat-detail">Para registrar puntos en tiempo real y controlar los tiempos. El celular del moderador sirve perfectamente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AROMAS -->
+<section>
+  <p class="section-label">Opciones de aromas</p>
+  <h2>¿Qué va dentro<br>de las bolsitas?</h2>
+  <p>Eligen <strong>7 aromas</strong> de esta lista según lo que tengan disponible. La tabla muestra qué tan fácil es conseguir cada uno, qué tan fuerte huele y cómo se prepara para la bolsita.</p>
+
+  <div class="aromas-filter">
+    <button class="filter-btn active" onclick="filterAromas('all')">Todos</button>
+    <button class="filter-btn" onclick="filterAromas('facil')">Fáciles de conseguir</button>
+    <button class="filter-btn" onclick="filterAromas('fuerte')">Olor fuerte</button>
+    <button class="filter-btn" onclick="filterAromas('solido')">Van directo (sólido)</button>
+    <button class="filter-btn" onclick="filterAromas('liquido')">Necesitan algodón</button>
+  </div>
+
+  <div class="aromas-tabla">
+    <div class="aromas-tabla-header">
+      <span>Aroma</span>
+      <span>Intensidad</span>
+      <span>Accesibilidad</span>
+      <span>Cómo se prepara</span>
+    </div>
+
+    <!-- ESPECIAS -->
+    <div class="aromas-grupo-label">Especias de cocina</div>
+
+    <div class="aroma-row" data-tags="facil fuerte solido">
+      <span class="ar-name">🌿 Canela</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">1 raja o 1 pizca molida directo en la bolsita</span>
+    </div>
+    <div class="aroma-row" data-tags="facil fuerte solido">
+      <span class="ar-name">🔴 Clavo de olor</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">2–3 clavos ligeramente machacados</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media solido">
+      <span class="ar-name">⭐ Anís estrellado</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Fácil</span>
+      <span class="ar-prep">1 estrella entera o ligeramente machacada</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media solido">
+      <span class="ar-name">🫙 Pimienta negra o dulce</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">1 cucharadita de granos, mejor recién molida</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🌰 Nuez moscada</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Rallar un poco directamente en la bolsita</span>
+    </div>
+
+    <!-- HIERBAS -->
+    <div class="aromas-grupo-label">Hierbas aromáticas</div>
+
+    <div class="aroma-row" data-tags="facil fuerte liquido">
+      <span class="ar-name">🌱 Menta o Hierbabuena</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">Hojas frescas machacadas directo, o esencia en algodón</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🌿 Eucalipto</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Hojas secas machacadas, o aceite esencial en algodón</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media solido">
+      <span class="ar-name">🌱 Romero</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Fácil</span>
+      <span class="ar-prep">Unas ramitas secas o frescas machacadas directo</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media solido">
+      <span class="ar-name">🍃 Orégano seco</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">Una pizca directo en la bolsita</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🍂 Laurel</span>
+      <span class="ar-intensidad baja">●○○ Suave</span>
+      <span class="ar-acceso facil">Fácil</span>
+      <span class="ar-prep">1–2 hojas secas ligeramente machacadas</span>
+    </div>
+
+    <!-- CÍTRICOS -->
+    <div class="aromas-grupo-label">Cítricos y frescos</div>
+
+    <div class="aroma-row" data-tags="facil fuerte solido">
+      <span class="ar-name">🍊 Cáscara de naranja</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">Ralladura fresca — preparar justo antes, pierde fuerza rápido</span>
+    </div>
+    <div class="aroma-row" data-tags="facil fuerte solido">
+      <span class="ar-name">🍋 Cáscara de limón o mandarina</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">Ralladura fresca — preparar justo antes, pierde fuerza rápido</span>
+    </div>
+    <div class="aroma-row" data-tags="media liquido">
+      <span class="ar-name">🌾 Limonaria (Lemongrass)</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Tallo fresco machacado, o aceite esencial en algodón</span>
+    </div>
+
+    <!-- DULCES -->
+    <div class="aromas-grupo-label">Aromas dulces y cálidos</div>
+
+    <div class="aroma-row" data-tags="facil fuerte solido">
+      <span class="ar-name">☕ Café</span>
+      <span class="ar-intensidad alta">●●● Alta</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">1 cucharadita de café molido directo en la bolsita</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media liquido">
+      <span class="ar-name">🍦 Vainilla</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Fácil</span>
+      <span class="ar-prep">Esencia líquida en algodón, o vaina abierta directo</span>
+    </div>
+    <div class="aroma-row" data-tags="facil media solido">
+      <span class="ar-name">🍫 Cacao o chocolate</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso facil">Muy fácil</span>
+      <span class="ar-prep">1 cucharadita de cacao en polvo puro directo</span>
+    </div>
+
+    <!-- FLORALES -->
+    <div class="aromas-grupo-label">Florales y suaves</div>
+
+    <div class="aroma-row" data-tags="media liquido">
+      <span class="ar-name">💜 Lavanda</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Flores secas directo, o aceite esencial en algodón</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🌼 Manzanilla</span>
+      <span class="ar-intensidad baja">●○○ Suave</span>
+      <span class="ar-acceso facil">Fácil (sobres de té)</span>
+      <span class="ar-prep">Abrir un sobre de té de manzanilla y colocar el contenido</span>
+    </div>
+
+    <!-- OTROS -->
+    <div class="aromas-grupo-label">Otros</div>
+
+    <div class="aroma-row" data-tags="media liquido">
+      <span class="ar-name">🌲 Pino</span>
+      <span class="ar-intensidad media">●●○ Media</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Agujas de pino frescas machacadas, o aceite esencial en algodón</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🥥 Coco</span>
+      <span class="ar-intensidad baja">●○○ Suave</span>
+      <span class="ar-acceso media">Moderada</span>
+      <span class="ar-prep">Coco rallado seco directo — puede mezclarse con otro si es muy suave</span>
+    </div>
+    <div class="aroma-row" data-tags="media solido">
+      <span class="ar-name">🌰 Almendras</span>
+      <span class="ar-intensidad baja">●○○ Suave</span>
+      <span class="ar-acceso facil">Fácil</span>
+      <span class="ar-prep">Almendras tostadas ligeramente machacadas — olor más notorio tostadas</span>
+    </div>
+
+  </div>
+
+  <div class="aromas-nota">
+    <strong>Para los que necesitan algodón:</strong> los aromas líquidos (vainilla, lavanda, eucalipto, pino, lemongrass) se colocan echando unas gotas de la esencia sobre un trozo de algodón, que luego va dentro de la bolsita cerrada.
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- REGLAS -->
+<section>
+  <p class="section-label">Antes de empezar</p>
+  <h2>Reglas generales</h2>
+  <p>Aplican durante toda la actividad y todos los equipos las conocen antes de iniciar.</p>
+  <div class="reglas-list">
+    <div class="regla-item">
+      <span class="regla-num">1</span>
+      <p class="regla-text">Cada equipo elige quién juega cada ronda <strong>antes de comenzar</strong>. No se puede cambiar después.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">2</span>
+      <p class="regla-text">Ninguna persona puede participar en más de una ronda.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">3</span>
+      <p class="regla-text">Prohibido hablar, hacer gestos o dar pistas mientras el compañero está oliendo. Solo en la Ronda 3 se permite actuar.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">4</span>
+      <p class="regla-text">Prohibido abrir las bolsitas o intentar ver su contenido en cualquier momento.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">5</span>
+      <p class="regla-text">Cada bolsita se puede oler <strong>máximo 10 segundos</strong> por turno, controlado por el moderador.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">6</span>
+      <p class="regla-text">Las respuestas son definitivas una vez entregadas al moderador. No hay correcciones.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">7</span>
+      <p class="regla-text">El moderador anuncia los puntajes en voz alta al terminar cada ronda y los anota en la pizarra para que todos los vean.</p>
+    </div>
+    <div class="regla-item">
+      <span class="regla-num">8</span>
+      <p class="regla-text">En caso de empate al final de las tres rondas, se juega una ronda de desempate con un aroma sorpresa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RONDAS -->
+<div class="rondas-section">
+  <div class="rondas-inner">
+    <p class="section-label">El corazón del juego</p>
+    <h2>Las 3 rondas</h2>
+
+    <!-- RONDA 1 -->
+    <div class="ronda-card">
+      <span class="ronda-num-bg">1</span>
+      <span class="ronda-badge">Ronda 1</span>
+      <div class="ronda-title">Identificación Rápida</div>
+      <div class="ronda-meta">
+        <div class="ronda-meta-item">Participa: <span>Integrante A de cada equipo</span></div>
+        <div class="ronda-meta-item">Tiempo: <span>~2 min por equipo</span></div>
+        <div class="ronda-meta-item">Máximo: <span>7 puntos</span></div>
+      </div>
+      <div class="ronda-steps">
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El Integrante A de cada equipo pasa de uno en uno. Se coloca la venda y se sienta frente al moderador.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El moderador le entrega las 7 bolsitas en orden numérico. El jugador tiene 10 segundos para oler cada una.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">Después de oler cada bolsita, el jugador dice en voz alta qué aroma cree que es. El moderador anota las respuestas.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">Al terminar el turno de los cuatro equipos, el moderador corrige y anuncia los puntajes de esta ronda.</p>
+        </div>
+      </div>
+      <div class="puntaje-box">
+        <strong>Puntaje</strong>
+        1 punto por cada aroma identificado correctamente · Máximo 7 puntos por equipo
+      </div>
+    </div>
+
+    <!-- RONDA 2 -->
+    <div class="ronda-card">
+      <span class="ronda-num-bg">2</span>
+      <span class="ronda-badge">Ronda 2</span>
+      <div class="ronda-title">Memoria Olfativa</div>
+      <div class="ronda-meta">
+        <div class="ronda-meta-item">Participa: <span>Integrante B de cada equipo</span></div>
+        <div class="ronda-meta-item">Tiempo: <span>3 min por equipo</span></div>
+        <div class="ronda-meta-item">Máximo: <span>4 puntos</span></div>
+      </div>
+      <div class="ronda-steps">
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El moderador prepara 4 bolsitas: 2 pares de aromas iguales (por ejemplo, dos con café y dos con canela). Las mezcla y numera al azar.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El Integrante B recibe las 4 bolsitas con los ojos vendados. Puede olerlas en cualquier orden y las veces que necesite dentro del tiempo límite.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">Su tarea es agrupar las 4 bolsitas en 2 parejas del mismo aroma. Cuando está seguro, entrega su decisión al moderador.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">Si el tiempo se agota antes de decidir, el moderador toma lo que tiene hasta ese momento como respuesta final.</p>
+        </div>
+      </div>
+      <div class="puntaje-box">
+        <strong>Puntaje</strong>
+        4 puntos si agrupa correctamente las 2 parejas · 2 puntos si solo acierta 1 pareja · 0 puntos si ninguna es correcta
+      </div>
+    </div>
+
+    <!-- RONDA 3 -->
+    <div class="ronda-card">
+      <span class="ronda-num-bg">3</span>
+      <span class="ronda-badge">Ronda 3</span>
+      <div class="ronda-title">Actuación Olfativa</div>
+      <div class="ronda-meta">
+        <div class="ronda-meta-item">Participa: <span>Integrante C de cada equipo</span></div>
+        <div class="ronda-meta-item">Preparación: <span>huele la bolsita</span></div>
+        <div class="ronda-meta-item">Actuación: <span>1 minuto</span></div>
+        <div class="ronda-meta-item">Máximo: <span>5 puntos</span></div>
+      </div>
+      <div class="ronda-steps">
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El moderador elige en secreto una de las 7 bolsitas y se la entrega al Integrante C, quien la huele de espaldas a su equipo para que nadie más vea cuál es.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El jugador debe hacer que su propio equipo adivine el aroma usando únicamente gestos, expresiones faciales, mímicas, sonidos u onomatopeyas. Tiene 1 minuto.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">El equipo puede lanzar respuestas en voz alta en cualquier momento. Si adivina antes de los 30 segundos, suma 5 puntos. Si adivina después de los 30 segundos pero antes de que se acabe el minuto, suma 3 puntos.</p>
+        </div>
+        <div class="ronda-step">
+          <span class="ronda-step-dot"></span>
+          <p class="ronda-step-text">Si el tiempo se agota sin adivinar, el equipo no suma puntos en esta ronda.</p>
+        </div>
+      </div>
+
+      <div class="r3-rules">
+        <div class="r3-col permitido">
+          <div class="r3-col-label">✓ Permitido</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Gestos y mímicas</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Expresiones faciales</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Sonidos y onomatopeyas</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Actuar el contexto (cocinar, tomar café…)</div>
+        </div>
+        <div class="r3-col prohibido">
+          <div class="r3-col-label">✗ Prohibido</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Decir el nombre del aroma</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Frases obvias ("me lo tomo en la mañana")</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Decir la categoría ("es una especia")</div>
+          <div class="r3-rule-item"><span class="r3-icon">•</span> Hacer rimas con el nombre</div>
+        </div>
+      </div>
+
+      <div class="ejemplos-r3">
+        <div class="ejemplos-label">Ejemplos de actuación</div>
+        <div class="ejemplo-fila">
+          <span class="ejemplo-aroma">☕ Café</span>
+          <p class="ejemplo-desc">Actuar como si estuviera tomando algo caliente, soplar, hacer el sonido de un sorbo, poner cara de despertar.</p>
+        </div>
+        <div class="ejemplo-fila">
+          <span class="ejemplo-aroma">🧄 Ajo</span>
+          <p class="ejemplo-desc">Simular que pica o pela algo, frotarse los dedos, hacer cara de olor fuerte que queda en las manos.</p>
+        </div>
+        <div class="ejemplo-fila">
+          <span class="ejemplo-aroma">🍋 Limón</span>
+          <p class="ejemplo-desc">Hacer cara de acidez extrema, como si mordiera algo muy agrio, cerrar los ojos con fuerza.</p>
+        </div>
+      </div>
+
+      <div class="puntaje-box">
+        <strong>Puntaje</strong>
+        5 puntos si el equipo adivina en menos de 30 segundos · 3 puntos si adivina entre 30 segundos y 1 minuto · 0 puntos si no adivina
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TABLA DE PUNTOS -->
+<div class="tabla-section">
+  <p class="section-label">Marcador</p>
+  <h2>Tabla de puntos</h2>
+  <p>El moderador lleva el marcador en la pizarra en tiempo real. Al finalizar cada ronda, anuncia los puntos en voz alta antes de anotarlos. Esta tabla muestra un ejemplo de cómo podría verse al final.</p>
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>Equipo</th>
+        <th>Ronda 1 (/ 7)</th>
+        <th>Ronda 2 (/ 4)</th>
+        <th>Ronda 3 (/ 5)</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ganador">
+        <td><strong>🏆 Equipo Olfato</strong></td>
+        <td>6</td>
+        <td>4</td>
+        <td>5</td>
+        <td class="total">15</td>
+      </tr>
+      <tr>
+        <td>Equipo Vista</td>
+        <td>5</td>
+        <td>2</td>
+        <td>5</td>
+        <td class="total">12</td>
+      </tr>
+      <tr>
+        <td>Equipo Tacto</td>
+        <td>4</td>
+        <td>4</td>
+        <td>3</td>
+        <td class="total">11</td>
+      </tr>
+      <tr>
+        <td>Equipo Gusto</td>
+        <td>3</td>
+        <td>2</td>
+        <td>3</td>
+        <td class="total">8</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="divider"></div>
+
+<!-- DESEMPATE -->
+<div class="desempate-block">
+  <div class="desempate-inner">
+    <p class="section-label">Si hay empate</p>
+    <h2>Ronda de desempate</h2>
+    <p>Si dos o más equipos terminan con el mismo puntaje, cada uno elige a un representante que no haya jugado antes. El moderador presenta una bolsita con un aroma sorpresa que no estuvo entre los 7 originales —tierra húmeda, pino, incienso— y el primero en identificarlo correctamente en voz alta le da el triunfo a su equipo.</p>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-section">
+  <div class="tips-inner">
+    <p class="section-label">Para el moderador</p>
+    <h2>Tips de preparación</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-icon">⏰</span>
+        <div class="tip-title">Prepara con anticipación</div>
+        <p class="tip-body">Arma las bolsitas 30 minutos antes. La ralladura de limón es la única que se prepara justo antes de empezar, porque pierde fuerza rápidamente.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">🔢</span>
+        <div class="tip-title">Numera todo</div>
+        <p class="tip-body">Escribe el número de cada bolsita con marcador por fuera. Ten una hoja maestra privada con la clave de aromas para corregir sin dudar.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">🧄</span>
+        <div class="tip-title">El ajo siempre al final</div>
+        <p class="tip-body">Su olor es muy invasivo y persiste en las fosas nasales. Si se usa antes, afecta la percepción de los aromas siguientes.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">🌬</span>
+        <div class="tip-title">Respiración correcta</div>
+        <p class="tip-body">Indica a los participantes que respiren suave y pausado, no que inhalen fuerte de golpe. Eso mejora mucho la percepción del aroma.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">🎙</span>
+        <div class="tip-title">Anima la Ronda 3</div>
+        <p class="tip-body">La actuación es el momento más divertido. El moderador puede crear ambiente animando al público a aplaudir, reírse y reaccionar.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon">⏱</span>
+        <div class="tip-title">Cronómetro visible</div>
+        <p class="tip-body">En la Ronda 3, anuncia cuando pasen los 30 segundos en voz alta para que todos sepan si la respuesta vale 5 o 3 puntos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREMIOS -->
+<div class="premio-section">
+  <p class="section-label">Para el equipo ganador</p>
+  <h2>El premio</h2>
+  <p>El reconocimiento puede adaptarse al contexto de la clase.</p>
+  <div class="premio-grid">
+    <div class="premio-item">
+      <span class="premio-icon">🥇</span>
+      <div class="premio-text">Diploma "Narices de Oro"</div>
+    </div>
+    <div class="premio-item">
+      <span class="premio-icon">☕</span>
+      <div class="premio-text">Bolsita sorpresa con café, canela o chocolate</div>
+    </div>
+    <div class="premio-item">
+      <span class="premio-icon">📸</span>
+      <div class="premio-text">Foto de campeones para el grupo</div>
+    </div>
+    <div class="premio-item">
+      <span class="premio-icon">⭐</span>
+      <div class="premio-text">Puntos extra en la materia (si aplica)</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>Narices de Campeones</strong> · Torneo Olfativo por Equipos · Actividad universitaria
+</footer>
+
+<script>
+  function filterAromas(tag) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.aroma-row').forEach(row => {
+      if (tag === 'all') {
+        row.classList.remove('hidden');
+      } else {
+        const tags = row.dataset.tags || '';
+        row.classList.toggle('hidden', !tags.includes(tag));
+      }
+    });
+    document.querySelectorAll('.aromas-grupo-label').forEach(label => {
+      let next = label.nextElementSibling;
+      let allHidden = true;
+      while (next && !next.classList.contains('aromas-grupo-label')) {
+        if (next.classList.contains('aroma-row') && !next.classList.contains('hidden')) {
+          allHidden = false; break;
+        }
+        next = next.nextElementSibling;
+      }
+      label.style.display = allHidden ? 'none' : '';
+    });
+  }
+</script>
+</body>
+</html>
