@@ -835,8 +835,7 @@
     <p class="section-label">¿De qué trata?</p>
     <h2>El objetivo</h2>
     <p>Cuatro equipos compiten desarrollando su sentido del olfato a través de tres rondas distintas: identificar aromas, recordarlos y comunicarlos mediante actuación. Un integrante diferente del equipo participa en cada ronda, garantizando que todos jueguen.</p>
-    <p>El grupo organizador —al que le correspondió el sentido del olfato— actúa como moderador. No compite. Se encarga de preparar los materiales, controlar los tiempos y llevar el marcador visible para todos.</p>
-  </div>
+    
 </section>
 
 <!-- FORMATO -->
@@ -866,243 +865,15 @@
       <p class="formato-desc">puntos máximos por equipo</p>
     </div>
   </div>
-  <div class="roles-note">
-    El grupo que preparó la actividad es el <strong>moderador</strong>: no compite, prepara las bolsitas, controla el cronómetro y actualiza la tabla de puntos en la pizarra al final de cada ronda.
-  </div>
+ 
 </section>
 
 <div class="divider"></div>
 
-<!-- MATERIALES -->
-<div class="materiales-section">
-  <div class="materiales-inner">
-    <p class="section-label">Lo que necesitas</p>
-    <h2>Materiales</h2>
-    <p>Todo se consigue en cocina o supermercado. Los aromas son sólidos o frescos, así que van directo dentro de la bolsita sin necesidad de algodón ni gasa.</p>
-    <div class="materiales-grid">
-      <div class="material-card">
-        <span class="mat-icon">🛍</span>
-        <div class="mat-name">Bolsitas opacas</div>
-        <p class="mat-detail">7 bolsitas de tela tipo organza o papel de regalo. Cerradas con liga o cinta para que no salga el polvo.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">☕</span>
-        <div class="mat-name">Café molido</div>
-        <p class="mat-detail">Una cucharadita directamente dentro de la bolsita.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">🌿</span>
-        <div class="mat-name">Canela · Romero · Orégano</div>
-        <p class="mat-detail">Una pizca de cada uno, directo en su bolsita. Sin ningún otro soporte.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">🔴</span>
-        <div class="mat-name">Clavo de olor</div>
-        <p class="mat-detail">2 o 3 clavos enteros, ligeramente machacados para liberar mejor el aroma.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">🍋</span>
-        <div class="mat-name">Limón (ralladura)</div>
-        <p class="mat-detail">Ralladura fresca de medio limón. Preparar justo antes de la actividad, pierde fuerza rápido.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">🧄</span>
-        <div class="mat-name">Ajo molido</div>
-        <p class="mat-detail">Una pizca pequeña. Muy invasivo — siempre en la bolsita 7, nunca antes.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">👁</span>
-        <div class="mat-name">Vendas para ojos</div>
-        <p class="mat-detail">Una por participante activo por ronda. Pueden ser pañuelos o telas oscuras dobladas.</p>
-      </div>
-      <div class="material-card">
-        <span class="mat-icon">📋</span>
-        <div class="mat-name">Pizarra y cronómetro</div>
-        <p class="mat-detail">Para registrar puntos en tiempo real y controlar los tiempos. El celular del moderador sirve perfectamente.</p>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- AROMAS -->
-<section>
-  <p class="section-label">Opciones de aromas</p>
-  <h2>¿Qué va dentro<br>de las bolsitas?</h2>
-  <p>Eligen <strong>7 aromas</strong> de esta lista según lo que tengan disponible. La tabla muestra qué tan fácil es conseguir cada uno, qué tan fuerte huele y cómo se prepara para la bolsita.</p>
 
-  <div class="aromas-filter">
-    <button class="filter-btn active" onclick="filterAromas('all')">Todos</button>
-    <button class="filter-btn" onclick="filterAromas('facil')">Fáciles de conseguir</button>
-    <button class="filter-btn" onclick="filterAromas('fuerte')">Olor fuerte</button>
-    <button class="filter-btn" onclick="filterAromas('solido')">Van directo (sólido)</button>
-    <button class="filter-btn" onclick="filterAromas('liquido')">Necesitan algodón</button>
-  </div>
-
-  <div class="aromas-tabla">
-    <div class="aromas-tabla-header">
-      <span>Aroma</span>
-      <span>Intensidad</span>
-      <span>Accesibilidad</span>
-      <span>Cómo se prepara</span>
-    </div>
-
-    <!-- ESPECIAS -->
-    <div class="aromas-grupo-label">Especias de cocina</div>
-
-    <div class="aroma-row" data-tags="facil fuerte solido">
-      <span class="ar-name">🌿 Canela</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">1 raja o 1 pizca molida directo en la bolsita</span>
-    </div>
-    <div class="aroma-row" data-tags="facil fuerte solido">
-      <span class="ar-name">🔴 Clavo de olor</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">2–3 clavos ligeramente machacados</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media solido">
-      <span class="ar-name">⭐ Anís estrellado</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Fácil</span>
-      <span class="ar-prep">1 estrella entera o ligeramente machacada</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media solido">
-      <span class="ar-name">🫙 Pimienta negra o dulce</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">1 cucharadita de granos, mejor recién molida</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🌰 Nuez moscada</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Rallar un poco directamente en la bolsita</span>
-    </div>
-
-    <!-- HIERBAS -->
-    <div class="aromas-grupo-label">Hierbas aromáticas</div>
-
-    <div class="aroma-row" data-tags="facil fuerte liquido">
-      <span class="ar-name">🌱 Menta o Hierbabuena</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">Hojas frescas machacadas directo, o esencia en algodón</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🌿 Eucalipto</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Hojas secas machacadas, o aceite esencial en algodón</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media solido">
-      <span class="ar-name">🌱 Romero</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Fácil</span>
-      <span class="ar-prep">Unas ramitas secas o frescas machacadas directo</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media solido">
-      <span class="ar-name">🍃 Orégano seco</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">Una pizca directo en la bolsita</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🍂 Laurel</span>
-      <span class="ar-intensidad baja">●○○ Suave</span>
-      <span class="ar-acceso facil">Fácil</span>
-      <span class="ar-prep">1–2 hojas secas ligeramente machacadas</span>
-    </div>
-
-    <!-- CÍTRICOS -->
-    <div class="aromas-grupo-label">Cítricos y frescos</div>
-
-    <div class="aroma-row" data-tags="facil fuerte solido">
-      <span class="ar-name">🍊 Cáscara de naranja</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">Ralladura fresca — preparar justo antes, pierde fuerza rápido</span>
-    </div>
-    <div class="aroma-row" data-tags="facil fuerte solido">
-      <span class="ar-name">🍋 Cáscara de limón o mandarina</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">Ralladura fresca — preparar justo antes, pierde fuerza rápido</span>
-    </div>
-    <div class="aroma-row" data-tags="media liquido">
-      <span class="ar-name">🌾 Limonaria (Lemongrass)</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Tallo fresco machacado, o aceite esencial en algodón</span>
-    </div>
-
-    <!-- DULCES -->
-    <div class="aromas-grupo-label">Aromas dulces y cálidos</div>
-
-    <div class="aroma-row" data-tags="facil fuerte solido">
-      <span class="ar-name">☕ Café</span>
-      <span class="ar-intensidad alta">●●● Alta</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">1 cucharadita de café molido directo en la bolsita</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media liquido">
-      <span class="ar-name">🍦 Vainilla</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Fácil</span>
-      <span class="ar-prep">Esencia líquida en algodón, o vaina abierta directo</span>
-    </div>
-    <div class="aroma-row" data-tags="facil media solido">
-      <span class="ar-name">🍫 Cacao o chocolate</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso facil">Muy fácil</span>
-      <span class="ar-prep">1 cucharadita de cacao en polvo puro directo</span>
-    </div>
-
-    <!-- FLORALES -->
-    <div class="aromas-grupo-label">Florales y suaves</div>
-
-    <div class="aroma-row" data-tags="media liquido">
-      <span class="ar-name">💜 Lavanda</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Flores secas directo, o aceite esencial en algodón</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🌼 Manzanilla</span>
-      <span class="ar-intensidad baja">●○○ Suave</span>
-      <span class="ar-acceso facil">Fácil (sobres de té)</span>
-      <span class="ar-prep">Abrir un sobre de té de manzanilla y colocar el contenido</span>
-    </div>
-
-    <!-- OTROS -->
-    <div class="aromas-grupo-label">Otros</div>
-
-    <div class="aroma-row" data-tags="media liquido">
-      <span class="ar-name">🌲 Pino</span>
-      <span class="ar-intensidad media">●●○ Media</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Agujas de pino frescas machacadas, o aceite esencial en algodón</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🥥 Coco</span>
-      <span class="ar-intensidad baja">●○○ Suave</span>
-      <span class="ar-acceso media">Moderada</span>
-      <span class="ar-prep">Coco rallado seco directo — puede mezclarse con otro si es muy suave</span>
-    </div>
-    <div class="aroma-row" data-tags="media solido">
-      <span class="ar-name">🌰 Almendras</span>
-      <span class="ar-intensidad baja">●○○ Suave</span>
-      <span class="ar-acceso facil">Fácil</span>
-      <span class="ar-prep">Almendras tostadas ligeramente machacadas — olor más notorio tostadas</span>
-    </div>
-
-  </div>
-
-  <div class="aromas-nota">
-    <strong>Para los que necesitan algodón:</strong> los aromas líquidos (vainilla, lavanda, eucalipto, pino, lemongrass) se colocan echando unas gotas de la esencia sobre un trozo de algodón, que luego va dentro de la bolsita cerrada.
-  </div>
-
-</section>
 
 <div class="divider"></div>
 
@@ -1187,39 +958,55 @@
       </div>
     </div>
 
-    <!-- RONDA 2 -->
-    <div class="ronda-card">
-      <span class="ronda-num-bg">2</span>
-      <span class="ronda-badge">Ronda 2</span>
-      <div class="ronda-title">Memoria Olfativa</div>
-      <div class="ronda-meta">
-        <div class="ronda-meta-item">Participa: <span>Integrante B de cada equipo</span></div>
-        <div class="ronda-meta-item">Tiempo: <span>3 min por equipo</span></div>
-        <div class="ronda-meta-item">Máximo: <span>4 puntos</span></div>
-      </div>
-      <div class="ronda-steps">
-        <div class="ronda-step">
-          <span class="ronda-step-dot"></span>
-          <p class="ronda-step-text">El moderador prepara 4 bolsitas: 2 pares de aromas iguales (por ejemplo, dos con café y dos con canela). Las mezcla y numera al azar.</p>
-        </div>
-        <div class="ronda-step">
-          <span class="ronda-step-dot"></span>
-          <p class="ronda-step-text">El Integrante B recibe las 4 bolsitas con los ojos vendados. Puede olerlas en cualquier orden y las veces que necesite dentro del tiempo límite.</p>
-        </div>
-        <div class="ronda-step">
-          <span class="ronda-step-dot"></span>
-          <p class="ronda-step-text">Su tarea es agrupar las 4 bolsitas en 2 parejas del mismo aroma. Cuando está seguro, entrega su decisión al moderador.</p>
-        </div>
-        <div class="ronda-step">
-          <span class="ronda-step-dot"></span>
-          <p class="ronda-step-text">Si el tiempo se agota antes de decidir, el moderador toma lo que tiene hasta ese momento como respuesta final.</p>
-        </div>
-      </div>
-      <div class="puntaje-box">
-        <strong>Puntaje</strong>
-        4 puntos si agrupa correctamente las 2 parejas · 2 puntos si solo acierta 1 pareja · 0 puntos si ninguna es correcta
-      </div>
+   <!-- RONDA 2 -->
+<div class="ronda-card">
+  <span class="ronda-num-bg">2</span>
+  <span class="ronda-badge">Ronda 2</span>
+  <div class="ronda-title">Memoria Secuencial</div>
+  <div class="ronda-meta">
+    <div class="ronda-meta-item">Participa: <span>Integrante B de cada equipo</span></div>
+    <div class="ronda-meta-item">Tiempo: <span>2 min por equipo</span></div>
+    <div class="ronda-meta-item">Máximo: <span>4 puntos</span></div>
+  </div>
+  <div class="ronda-steps">
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">El moderador prepara <strong>4 bolsitas con aromas DIFERENTES</strong> (café, limón, canela, ajo, por ejemplo). Las numera en orden: 1, 2, 3, 4.</p>
     </div>
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">El Integrante B se venda los ojos. El moderador le da a oler las bolsitas <strong>EN ORDEN</strong> (primero la 1, luego la 2, luego la 3, luego la 4). Puede repetir el recorrido completo <strong>hasta 2 veces</strong> para memorizar la secuencia.</p>
+    </div>
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">El moderador <strong>REVUELVE las 4 bolsitas</strong> y se las entrega al jugador sin ningún orden.</p>
+    </div>
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">El jugador debe <strong>REORDENAR las bolsitas</strong> según la secuencia original que olió al principio. Tiene que decidir cuál va primera, cuál segunda, etc.</p>
+    </div>
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">Cuando termina, entrega su secuencia al moderador. <strong>No se le dice si acertó o no en el momento.</strong> Se anotan todas las respuestas.</p>
+    </div>
+    <div class="ronda-step">
+      <span class="ronda-step-dot"></span>
+      <p class="ronda-step-text">Al final, cuando <strong>TODOS los Integrantes B de los 4 equipos terminaron</strong>, el moderador corrige todas las secuencias y anuncia los puntajes.</p>
+    </div>
+  </div>
+  <div class="puntaje-box">
+    <strong>Puntaje</strong>
+    4 puntos si ordena correctamente las 4 posiciones · 2 puntos si acierta solo 2 o 3 posiciones · 0 puntos si acierta 1 o ninguna
+  </div>
+  <div style="margin-top: 16px; background: rgba(212,168,83,0.08); border-radius: 4px; padding: 12px 16px;">
+    <div style="color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 6px;">📝 EJEMPLO</div>
+    <div style="font-size: 13px; color: rgba(245,240,232,0.7); line-height: 1.6;">
+      <strong>Secuencia original:</strong> 1: Café · 2: Limón · 3: Canela · 4: Ajo<br>
+      <strong>Después de revolver:</strong> las bolsitas quedan desordenadas (ej: Ajo, Café, Limón, Canela)<br>
+      <strong>El jugador debe reordenarlas como:</strong> Café, Limón, Canela, Ajo
+    </div>
+  </div>
+</div>
 
     <!-- RONDA 3 -->
     <div class="ronda-card">
@@ -1293,53 +1080,7 @@
   </div>
 </div>
 
-<!-- TABLA DE PUNTOS -->
-<div class="tabla-section">
-  <p class="section-label">Marcador</p>
-  <h2>Tabla de puntos</h2>
-  <p>El moderador lleva el marcador en la pizarra en tiempo real. Al finalizar cada ronda, anuncia los puntos en voz alta antes de anotarlos. Esta tabla muestra un ejemplo de cómo podría verse al final.</p>
-  <table class="tabla">
-    <thead>
-      <tr>
-        <th>Equipo</th>
-        <th>Ronda 1 (/ 7)</th>
-        <th>Ronda 2 (/ 4)</th>
-        <th>Ronda 3 (/ 5)</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="ganador">
-        <td><strong>🏆 Equipo Olfato</strong></td>
-        <td>6</td>
-        <td>4</td>
-        <td>5</td>
-        <td class="total">15</td>
-      </tr>
-      <tr>
-        <td>Equipo Vista</td>
-        <td>5</td>
-        <td>2</td>
-        <td>5</td>
-        <td class="total">12</td>
-      </tr>
-      <tr>
-        <td>Equipo Tacto</td>
-        <td>4</td>
-        <td>4</td>
-        <td>3</td>
-        <td class="total">11</td>
-      </tr>
-      <tr>
-        <td>Equipo Gusto</td>
-        <td>3</td>
-        <td>2</td>
-        <td>3</td>
-        <td class="total">8</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
 
 <div class="divider"></div>
 
@@ -1353,44 +1094,7 @@
 </div>
 
 <!-- TIPS -->
-<div class="tips-section">
-  <div class="tips-inner">
-    <p class="section-label">Para el moderador</p>
-    <h2>Tips de preparación</h2>
-    <div class="tips-grid">
-      <div class="tip-card">
-        <span class="tip-icon">⏰</span>
-        <div class="tip-title">Prepara con anticipación</div>
-        <p class="tip-body">Arma las bolsitas 30 minutos antes. La ralladura de limón es la única que se prepara justo antes de empezar, porque pierde fuerza rápidamente.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-icon">🔢</span>
-        <div class="tip-title">Numera todo</div>
-        <p class="tip-body">Escribe el número de cada bolsita con marcador por fuera. Ten una hoja maestra privada con la clave de aromas para corregir sin dudar.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-icon">🧄</span>
-        <div class="tip-title">El ajo siempre al final</div>
-        <p class="tip-body">Su olor es muy invasivo y persiste en las fosas nasales. Si se usa antes, afecta la percepción de los aromas siguientes.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-icon">🌬</span>
-        <div class="tip-title">Respiración correcta</div>
-        <p class="tip-body">Indica a los participantes que respiren suave y pausado, no que inhalen fuerte de golpe. Eso mejora mucho la percepción del aroma.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-icon">🎙</span>
-        <div class="tip-title">Anima la Ronda 3</div>
-        <p class="tip-body">La actuación es el momento más divertido. El moderador puede crear ambiente animando al público a aplaudir, reírse y reaccionar.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-icon">⏱</span>
-        <div class="tip-title">Cronómetro visible</div>
-        <p class="tip-body">En la Ronda 3, anuncia cuando pasen los 30 segundos en voz alta para que todos sepan si la respuesta vale 5 o 3 puntos.</p>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- PREMIOS -->
 <div class="premio-section">
